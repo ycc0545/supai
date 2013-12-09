@@ -1,0 +1,58 @@
+<include file="Product:header"/>
+
+<div class="main">
+
+    	<div class="p_mod">
+    		<h2 class="p_mod_title">订单信息</h2>
+            <div class="car">
+                <volist name="products" id="p">
+              <div class="car_list clearfix">
+                <div class="car_content clearfix">
+                  <h3><a href="{zuicity::U('Product/product',array('token'=>$token,'id'=>$p['id'],'wecha_id'=>$_GET['wecha_id']))}">{zuicity:$p.name}</a></h3>
+                     <a href="{zuicity::U('Product/product',array('token'=>$token,'id'=>$p['id'],'wecha_id'=>$_GET['wecha_id']))}">
+                      <img src="{zuicity:$p.logourl}" />
+                     </a>
+                     <div class="car_property">
+                        <span class="price_now">单价：<font>￥{zuicity:$p.price}</font></span>
+                                                <div class="o_num_input clearfix" id="{zuicity:$p.id}">
+                            
+                            数量：{zuicity:$p.count}
+                           
+                        </div>
+                                             
+                     </div>
+                </div>
+              </div>
+                 </volist>
+                            <p><span class="price_now" id="total_fee">总价格：<font>￥{zuicity:$totalFee}</font></span></p>
+            </div>            
+    	</div>
+
+ 
+</div>
+<style type="text/css">
+.desks{ display: none;}
+</style>
+
+
+
+<style>
+.deploy_ctype_tip{z-index:1001;width:100%;text-align:center;position:fixed;top:50%;margin-top:-23px;left:0;}.deploy_ctype_tip p{display:inline-block;padding:13px 24px;border:solid #d6d482 1px;background:#f5f4c5;font-size:16px;color:#8f772f;line-height:18px;border-radius:3px;}
+</style>
+<div class="main" id="wrap">
+    <form method="post" action="" onsubmit="return tgSubmit()">
+    	<div class="p_mod o_address">
+    		<h2 class="p_mod_title">接收信息</h2>
+            <div id="city">
+    		<ul>
+    			<li><strong>姓名：</strong><input type="text" placeholder="请输入收货人姓名" id="truename" name="truename" value="{zuicity:$thisOrder.truename}" /></li>
+    			<li><strong>手机：</strong><input type="text" placeholder="请输入联系人手机号" id="tel" name="tel" value="{zuicity:$thisOrder.tel}" /></li>
+    			<li><strong>地址：</strong><input type="text" placeholder="请输入详细地址" id="address" name="address" value="{zuicity:$thisOrder.address}" /></li>
+    		</ul>
+            </div>
+    	</div>
+    </form>
+</div>
+
+</body>
+</html>
