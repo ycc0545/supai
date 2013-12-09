@@ -3,8 +3,8 @@ return array(
 	'DB_TYPE'=>'mysql',
 	'DB_HOST'=>'localhost',
 	'DB_PORT'=>'3306',
-	'DB_NAME'=>'supai',
+	'DB_NAME'=>'supaiweixin',
 	'DB_USER'=>'root',
-	'DB_PWD'=>'xin123YUAN1',
+	'DB_PWD'=>'123456',
 	'DB_PREFIX'=>'zuicity_',
 );

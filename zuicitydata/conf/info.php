@@ -2,7 +2,7 @@
 return array (
   'site_name' => '素派微信营销',
   'site_title' => '素派公众服务器平台-素派微信第三方服务平台',
-  'site_url' => 'http://www.xmsupai.com',
+  'site_url' => 'http://113.10.157.155/supai',
   'site_my' => '素派',
   'ischeckuser' => 'false',
   'ipc' => '',
