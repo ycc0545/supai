@@ -12,7 +12,13 @@ class WeixinAction extends Action
         $weixin      = new Wechat($this->token);
         $data        = $weixin->request();
         $this->data  = $weixin->request();
-        $this->my    = C('site_my');
+        $postStr = $GLOBALS["HTTP_RAW_POST_DATA"];
+      	//extract post data
+		if (!empty($postStr))
+		{
+            $postObj = simplexml_load_string($postStr, 'SimpleXMLElement', LIBXML_NOCDATA);
+        	$this->my = $postObj->ToUserName;
+		}
         list($content, $type) = $this->reply($data);
         $weixin->response($content, $type);
     }
